@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Programming_3_Assignment_Week_2
+namespace assignment3
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        }
+    public enum CardSuit{
+        Spades,
+        Clubs,
+        Hearts,
+        Diamonds
     }
 }
