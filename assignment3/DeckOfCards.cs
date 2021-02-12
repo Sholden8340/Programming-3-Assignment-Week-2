@@ -20,15 +20,10 @@ namespace assignment3
         {
             for (int suit = 0; suit < 4; suit++)
             {
-                for (int rank = 2; rank < 11; rank++)
+                for (int rank = 2; rank < 15; rank++) // 11 = Jack 12 = Queen 13 = King 14 = Ace
                 {
-                    AllPlayingCards.Add(new PlayingCard(rank.ToString(), (CardSuit) suit));
+                    AllPlayingCards.Add(new PlayingCard(rank, (CardSuit) suit));
                 }
-
-                AllPlayingCards.Add(new PlayingCard("Jack", (CardSuit) suit));
-                AllPlayingCards.Add(new PlayingCard("Queen", (CardSuit) suit));
-                AllPlayingCards.Add(new PlayingCard("King", (CardSuit) suit));
-                AllPlayingCards.Add(new PlayingCard("Ace", (CardSuit) suit));
             }
         }
 

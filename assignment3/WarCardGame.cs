@@ -31,11 +31,11 @@ namespace assignment3
             {
                 if (count % 2 == 0)
                 {
-                    Player2.AddCard(card);
+                    Player1.AddCard(card);
                 }
                 else
                 {
-                    Player1.AddCard(card);
+                    Player2.AddCard(card);
                 }
 
                 count++;
@@ -66,38 +66,23 @@ namespace assignment3
             PlayingCard player1Card = Player1.GetNextCard();
             PlayingCard player2Card = Player2.GetNextCard();
 
-            // Rank should be enum?
-            // Try to parse Rank as an int
-            bool isPlayer1NumberRank = Int32.TryParse(player2Card.Rank, out int player2Rank);
-            bool isPlayer2NumberRank = Int32.TryParse(player1Card.Rank, out int player1Rank);
-
-            if (!isPlayer2NumberRank)
-            {
-                player2Rank = PictureCardToNumber(player2Card);
-            }
-
-            if (!isPlayer1NumberRank)
-            {
-                player1Rank = PictureCardToNumber(player1Card);
-            }
-
-            if (player1Rank > player2Rank)
+            if (player1Card.Rank > player2Card.Rank)
             {
                 Player1Wins();
             }
-            else if (player1Rank < player2Rank)
+            else if (player1Card.Rank < player2Card.Rank)
             {
                 Player2Wins();
             }
-            else if (player1Rank == -1 || player2Rank == -1)
-            {
-                throw new Exception("Couldn't convert picture card to value");
-            }
             else
             {
+                // Console.WriteLine("\n\n");
                 Draw();
+                // Console.WriteLine("\n\n\n------------DRAW--------------");
+                // Console.WriteLine(player1Card.ToString() + " RANK : " + player1Card.Rank.ToString());
+                // Console.WriteLine(player2Card.ToString() + " RANK : " + player2Card.Rank.ToString());
+                // Console.WriteLine("\n\n");
             }
-
 
             void Player1Wins()
             {
@@ -122,38 +107,14 @@ namespace assignment3
                 ShowCards();
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine("2 cards lost...");
-                Console.WriteLine("cards left: [{0}] {1}x, [{2}] {3}x", Player1.Name , Player1.PlayerCards.Count, Player2.Name , Player2.PlayerCards.Count);
+                Console.WriteLine("cards left: [{0}] {1}x, [{2}] {3}x", Player1.Name, Player1.PlayerCards.Count,
+                    Player2.Name, Player2.PlayerCards.Count);
             }
 
             void ShowCards()
             {
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("[{0}] {1} - [{2}] {3}", Player1.Name, player1Card.ToString(), Player2.Name, player2Card.ToString());
-            }
-
-            int PictureCardToNumber(PlayingCard card)
-            {
-                if (card.Rank.Equals("Ace"))
-                {
-                    return 14;
-                }
-
-                if (card.Rank.Equals("King"))
-                {
-                    return 13;
-                }
-
-                if (card.Rank.Equals("Queen"))
-                {
-                    return 12;
-                }
-
-                if (card.Rank.Equals("Jack"))
-                {
-                    return 11;
-                }
-
-                return -1;
+                Console.WriteLine("[{0}] {1} - [{2}] {3}", Player1.Name, player2Card.ToString(), Player2.Name, player1Card.ToString());
             }
         }
     }
