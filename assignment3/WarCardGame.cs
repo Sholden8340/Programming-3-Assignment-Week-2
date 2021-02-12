@@ -114,7 +114,7 @@ namespace assignment3
             void ShowCards()
             {
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("[{0}] {1} - [{2}] {3}", Player1.Name, player2Card.ToString(), Player2.Name, player1Card.ToString());
+                Console.WriteLine("[{0}] {1} - [{2}] {3}", Player1.Name, player1Card.ToString(), Player2.Name, player2Card.ToString());
             }
         }
     }
