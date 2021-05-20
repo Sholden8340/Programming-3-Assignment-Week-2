@@ -21,8 +21,6 @@ namespace assignment3
 
         public void StartNewGame()
         {
-            //Console.WriteLine(DeckOfCards.AllPlayingCards.Count);
-            //Console.WriteLine();
 
             DeckOfCards.Shuffle();
             int count = 0;
@@ -39,7 +37,6 @@ namespace assignment3
                 }
 
                 count++;
-                //Console.WriteLine(card.ToString());
             }
         }
 
@@ -76,12 +73,7 @@ namespace assignment3
             }
             else
             {
-                // Console.WriteLine("\n\n");
                 Draw();
-                // Console.WriteLine("\n\n\n------------DRAW--------------");
-                // Console.WriteLine(player1Card.ToString() + " RANK : " + player1Card.Rank.ToString());
-                // Console.WriteLine(player2Card.ToString() + " RANK : " + player2Card.Rank.ToString());
-                // Console.WriteLine("\n\n");
             }
 
             void Player1Wins()

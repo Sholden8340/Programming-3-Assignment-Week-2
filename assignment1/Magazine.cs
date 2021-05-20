@@ -13,16 +13,14 @@ namespace Assignment1
 
         public string ReleaseDay { get; set; }
 
-        public Magazine(string title, double price, string releaseDay)
+        public Magazine(string title, double price, string releaseDay) : base(title, price)
         {
-            this.Title = title;
-            this.Price = price;
             this.ReleaseDay = releaseDay;
         }
 
         public override string ToString()
         {
-            return $"{this.Title} - release day:{this.ReleaseDay}, {this.Price:##.00}";
+            return $"[Magazine] {this.Title} - release day:{this.ReleaseDay}, {this.Price:##.00}";
         }
     }
 }

@@ -21,15 +21,6 @@ namespace Assignment1
             double total = 0;
             foreach (BookStoreItem b in BookStoreItemList)
             {
-                if (b.GetType() == typeof(Book))
-                {
-                    Console.Write("[Book] ");
-                }
-                else if (b.GetType() == typeof(Magazine))
-                {
-                    Console.Write("[Magazine] ");
-                }
-
                 Console.WriteLine(b.ToString());
                 total += b.Price;
             }
